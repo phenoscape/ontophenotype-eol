@@ -7,9 +7,8 @@ import java.io.IOException;
 import org.phenoscape.ontophenotype.phenotype.AnnotationCollection;
 import com.google.gson.Gson;
 
-
 public class JSONReader implements IPhenotypeDataReader {
-	
+
 	protected Gson gson;
 
 	/**
@@ -17,24 +16,24 @@ public class JSONReader implements IPhenotypeDataReader {
 	 */
 	@Override
 	public AnnotationCollection readFile(String filePath) {
-		
+
 		String jsonText = "";
 		try {
-		    BufferedReader in = new BufferedReader(new FileReader(filePath));		    
-		    String line;
-		    		    
-		    while ((line = in.readLine()) != null) {
-		    	jsonText += line;
-		    }
-		    in.close();
+			BufferedReader in = new BufferedReader(new FileReader(filePath));
+			String line;
+
+			while ((line = in.readLine()) != null) {
+				jsonText += line;
+			}
+			in.close();
 		} catch (IOException e) {
 			System.out.println(e);
-		}		
-		
+		}
+
 		gson = new Gson();
-		AnnotationCollection annotationCollection = gson.fromJson(jsonText, 
+		AnnotationCollection annotationCollection = gson.fromJson(jsonText,
 				AnnotationCollection.class);
-		
+
 		return annotationCollection;
 	}
 

@@ -1,7 +1,7 @@
 package org.phenoscape.ontophenotype.phenotype;
 
 public class Annotation {
-	
+
 	private PhenotypeEntity entity;
 	private PhenotypeEntity related_entity;
 	private PhenotypeQuality quality;
@@ -37,9 +37,34 @@ public class Annotation {
 
 	public void setTaxon(Taxon taxon) {
 		this.taxon = taxon;
-	}	
-	
-	
-	
+	}
+
+	@Override
+	public String toString() {
+		return entity.toString() + " " + quality.toString();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Annotation)) {
+			return false;
+		}
+		Annotation annotation = (Annotation) obj;
+		return this.toString().equals(annotation.toString());
+
+	}
+
+	@Override
+	public int hashCode() {
+		final int multiplier = 23;
+		int code = 133;
+		code = multiplier * code + entity.getId().hashCode();
+		code = multiplier * code + quality.getId().hashCode();		
+
+		return code;
+	}
 
 }

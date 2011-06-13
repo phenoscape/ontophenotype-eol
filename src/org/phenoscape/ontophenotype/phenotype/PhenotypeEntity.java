@@ -21,5 +21,10 @@ public class PhenotypeEntity {
 		return id;
 	}
 	
+	@Override
+	public String toString() {
+		return id + " " + name ;		
+	}
+	
 
 }
