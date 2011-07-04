@@ -1,11 +1,11 @@
-import static org.junit.Assert.assertEquals;
+
 
 import java.util.List;
 
 import org.junit.Test;
-import org.phenoscape.ontophenotype.compare.TaxaComparer;
+
 import org.phenoscape.ontophenotype.input.JSONReader;
-import org.phenoscape.ontophenotype.phenotype.Annotation;
+
 import org.phenoscape.ontophenotype.phenotype.AnnotationCollection;
 import org.phenoscape.ontophenotype.phenotype.Taxon;
 import org.phenoscape.ontophenotype.text.BasicTextGenerator;
