@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<phenotypeQualities>
+	<phenotypeQuality>
+		<name>present</name>
+		<pattern>(Presents|Has) [indefinite_article] *</pattern>
+	</phenotypeQuality>
+	<phenotypeQuality>
+		<name>decreased size</name>
+		<pattern>(Presents|Has) a smaller *</pattern>
+	</phenotypeQuality>	
+	<phenotypeQuality>
+		<name>increased size</name>
+		<pattern>(Presents|Has) a (bigger|larger) *</pattern>
+	</phenotypeQuality>
+	<phenotypeQuality>
+		<name>bifurcated</name>
+		<pattern>(Presents|Has) a bifurcated *</pattern>
+		<pattern>The * is bifurcated</pattern>
+	</phenotypeQuality>
+	<phenotypeQuality>
+		<name>round</name>
+		<pattern>(Presents|has) a round *</pattern>		
+	</phenotypeQuality>
+	<phenotypeQuality>
+		<name>ossified</name>
+		<pattern>(Presents|has) an ossified *</pattern>		
+	</phenotypeQuality>
+</phenotypeQualities>
