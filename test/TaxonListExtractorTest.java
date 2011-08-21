@@ -14,7 +14,7 @@ public class TaxonListExtractorTest {
 		JSONReader jsonReader = new JSONReader();
 
 		AnnotationCollection annotationCollection = jsonReader
-				.readFile("test\\resources\\Ictalurus.json");
+				.readFile("test\\test resources\\Ictalurus.json");
 		List<Taxon> annotatedTaxa = annotationCollection.getAnnotatedTaxa();
 		
 		for (Taxon taxon : annotatedTaxa) {

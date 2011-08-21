@@ -1,6 +1,8 @@
 package org.phenoscape.ontophenotype.phenotype;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class AnnotationCollection {
@@ -39,11 +41,13 @@ public class AnnotationCollection {
 
 				Taxon annotatedTaxon = annotatedTaxa.get(annotatedTaxa
 						.indexOf(currentTaxon));
-				annotatedTaxon.addAnnotaion(annotation);
+				annotatedTaxon.fillAnnotationCollections(annotation);
 			} else {
 				currentTaxon
 						.setPhenotypeAnnotations(new ArrayList<Annotation>());
-				currentTaxon.addAnnotaion(annotation);
+				currentTaxon.setEntitiesIDsInAnnotations(new HashSet<String>());
+				currentTaxon.setEntityIdAnnotationMap(new HashMap<String, Annotation>());
+				currentTaxon.fillAnnotationCollections(annotation);
 				annotatedTaxa.add(currentTaxon);
 			}
 		}

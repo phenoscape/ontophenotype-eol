@@ -18,40 +18,23 @@ import org.xml.sax.SAXException;
 
 public class BasicTextGeneratorTest {
 
-	// @Test
-	// public void testCommonAnnotations() {
-	// JSONReader jsonReader = new JSONReader();
-	//
-	// AnnotationCollection annotationCollection = jsonReader
-	// .readFile("test\\resources\\Ictalurus_punctatus.json");
-	// List<Taxon> annotatedTaxa = annotationCollection.getAnnotatedTaxa();
-	//
-	// BasicTextGenerator textGenerator = new BasicTextGenerator();
-	//
-	// TextAugmentedTaxon textAugmentedTaxon = textGenerator
-	// .buildSampleText(annotatedTaxa.get(0));
-	// System.out.println(textAugmentedTaxon.getName() + " - "
-	// + textAugmentedTaxon.getId() + " - "
-	// + textAugmentedTaxon.getPhenotypeDescription());
-	// }
-
 	@Test
 	public void testCommonAnnotations() throws ParserConfigurationException, SAXException, IOException {
 		JSONReader jsonReader = new JSONReader();
 
 		AnnotationCollection annotationCollection = jsonReader
-				.readFile("test\\resources\\Ictalurus_punctatus.json");
+				.readFile("test\\test resources\\Ictalurus_punctatus.json");
 		List<Taxon> annotatedTaxa = annotationCollection.getAnnotatedTaxa();
 
 		BasicTextGenerator textGenerator = new BasicTextGenerator();
 
 		Map<String, List<String>> qualityToPatternMap = PatternFileReader
-				.parsePatternFile("test\\resources\\text_patterns_test.xml");
+				.parsePatternFile("test\\test resources\\text_patterns_test.xml");
 
 		TextAugmentedTaxon textAugmentedTaxon = textGenerator
-				.buildText(annotatedTaxa.get(0), qualityToPatternMap);
+				.buildText(annotatedTaxa.get(0), qualityToPatternMap, true);
 		System.out.println(textAugmentedTaxon.getName() + " - "
-				+ textAugmentedTaxon.getId() + " - "
+				+ textAugmentedTaxon.getDcIdentifier() + " - "
 				+ textAugmentedTaxon.getPhenotypeDescription());
 	}
 

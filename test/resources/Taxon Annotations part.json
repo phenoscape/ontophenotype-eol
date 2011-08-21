@@ -1,3 +1,0 @@
-{"total":700, "annotations":[{"entity":{"id":"TAO:0001834^OBO_REL:part_of(TAO:0001205)"},"quality":{"id":"PATO:0000467","name":"present"},"taxon":{"id":"TTO:1054206","extinct":false,"rank":{"id":"TAXRANK:0000006","name":"species"},"name":"Ictalurus punctatus"}},
-{"entity":{"id":"TAO:0000356^OBO_REL:part_of(TAO:0001228)"},"quality":{"id":"PATO:0000070","name":"count"},"taxon":{"id":"TTO:1054206","extinct":false,"rank":{"id":"TAXRANK:0000006","name":"species"},"name":"Ictalurus punctatus"}},
-{"entity":{"id":"TAO:0001826","name":"urohyal median process"},"quality":{"id":"PATO:0000921","name":"width"},"taxon":{"id":"TTO:1054206","extinct":false,"rank":{"id":"TAXRANK:0000006","name":"species"},"name":"Ictalurus punctatus"}}]}

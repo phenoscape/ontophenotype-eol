@@ -12,7 +12,7 @@ public class PatternFileReaderTest {
 	public void testJSONReaderBasic() throws ParserConfigurationException,
 			SAXException, IOException {
 
-		PatternFileReader.parsePatternFile("test\\resources\\text_patterns_test.xml");
+		PatternFileReader.parsePatternFile("/test resources/text_patterns_test.xml");
 	}
 
 }

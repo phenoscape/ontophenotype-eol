@@ -4,12 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashSet;
 
-
 import org.phenoscape.ontophenotype.phenotype.Annotation;
 import org.phenoscape.ontophenotype.phenotype.Taxon;
 
 public class TaxaComparer {
 
+	/**
+	 * Retrieves the common phenotype annotations between a list of taxa.
+	 * 
+	 * @param annotatedTaxa
+	 *            the list of AnnotatedTaxa objects
+	 * @return a list of common annotations
+	 */
 	public static List<Annotation> getSimmilarAnnotations(
 			List<Taxon> annotatedTaxa) {
 
@@ -26,6 +32,14 @@ public class TaxaComparer {
 		return new ArrayList<Annotation>(commonAnnotationsSet);
 	}
 
+	/**
+	 * Retrieves the phenotype annotations that set apart a taxon from other
+	 * taxa.
+	 * 
+	 * @param baseTaxon
+	 * @param annotatedTaxa
+	 * @return a list of differentiating annotations
+	 */
 	public static List<Annotation> getDifferentiatingAnnotations(
 			Taxon baseTaxon, List<Taxon> annotatedTaxa) {
 
@@ -46,6 +60,14 @@ public class TaxaComparer {
 		return new ArrayList<Annotation>(differentiatingAnnotationsSet);
 	}
 
+	/**
+	 * Makes the difference of two sets (setA - setB).
+	 * 
+	 * @param setA
+	 * @param setB
+	 * @return a list of annotations representing the difference between setA
+	 *         and setB
+	 */
 	private static HashSet<Annotation> setDifference(HashSet<Annotation> setA,
 			HashSet<Annotation> setB) {
 

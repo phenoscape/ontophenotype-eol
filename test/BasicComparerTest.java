@@ -16,7 +16,7 @@ public class BasicComparerTest {
 		JSONReader jsonReader = new JSONReader();
 
 		AnnotationCollection annotationCollection = jsonReader
-				.readFile("test\\resources\\Ictalurus.json");
+				.readFile("test\\test resources\\Ictalurus.json");
 		List<Taxon> annotatedTaxa = annotationCollection.getAnnotatedTaxa();
 
 		List<Annotation> commonAnnotations = TaxaComparer
@@ -35,11 +35,11 @@ public class BasicComparerTest {
 		JSONReader jsonReader = new JSONReader();
 
 		AnnotationCollection annotationCollection = jsonReader
-				.readFile("test\\resources\\Ictalurus.json");
+				.readFile("test\\test resources\\Ictalurus.json");
 		List<Taxon> annotatedTaxa = annotationCollection.getAnnotatedTaxa();
 
 		AnnotationCollection baseTaxonAnnotationCollection = jsonReader
-				.readFile("test\\resources\\Ictalurus_punctatus.json");
+				.readFile("test\\test resources\\Ictalurus_punctatus.json");
 		List<Taxon> baseTaxonAnnotatedTaxa = baseTaxonAnnotationCollection
 				.getAnnotatedTaxa();
 
