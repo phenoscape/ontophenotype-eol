@@ -25,6 +25,12 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class AnatomyOntologyProcessor {
 
 	private OWLOntology anatomyOntology;
@@ -44,15 +50,17 @@ public class AnatomyOntologyProcessor {
 	public AnatomyOntologyProcessor(String ontologyURL) {
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		try {
-			
-			OntophenotypeLogger.info("Remotly connecting to http://purl.obolibrary.org/obo/tao.owl ... \n");
-			
+
+			OntophenotypeLogger
+					.info("Remotly connecting to http://purl.obolibrary.org/obo/tao.owl ... \n");
+
 			anatomyOntology = manager.loadOntologyFromOntologyDocument(IRI
 					.create(ontologyURL));
 			factory = manager.getOWLDataFactory();
-			
-			OntophenotypeLogger.info("Successfully connected to http://purl.obolibrary.org/obo/tao.owl. \n");
-			
+
+			OntophenotypeLogger
+					.info("Successfully connected to http://purl.obolibrary.org/obo/tao.owl. \n");
+
 		} catch (OWLOntologyCreationException e) {
 			e.printStackTrace();
 		}
@@ -74,6 +82,15 @@ public class AnatomyOntologyProcessor {
 		this.factory = factory;
 	}
 
+	/**
+	 * Finds all the component owl classes of a class identified by its IRI.
+	 * 
+	 * @param classIRI
+	 *            the IRI of the class for which the component classes should be
+	 *            found
+	 * @return a set of component owl classes IRIs
+	 * @throws OWLOntologyCreationException
+	 */
 	public Set<String> findComponentClasses(String classIRI)
 			throws OWLOntologyCreationException {
 
@@ -97,8 +114,6 @@ public class AnatomyOntologyProcessor {
 			String subClassIRI = iOWLClass.next().getIRI().toString();
 			subClassesIRIs.add(subClassIRI);
 		}
-
-		//System.out.println("reasoner subClasses " + subClasses.size());
 
 		return subClassesIRIs;
 	}

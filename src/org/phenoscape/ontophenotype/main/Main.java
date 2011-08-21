@@ -2,15 +2,23 @@ package org.phenoscape.ontophenotype.main;
 
 import org.phenoscape.ontophenotype.util.OntophenotypeLogger;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class Main {
 
 	public static void main(String[] args) {
-		
-		args = new String[4];
-		args[0] = "-i";
-		args[1] = "E:\\GSoC\\resources\\Ictalurus.json";
-		args[2] = "-o";
-		args[3] = "test_main_output.xml";
+		/*
+		 * To run this method in an IDE, provide the corresponding args[] parameters.
+		 * An example is presented below.
+		 * 
+		 * args = new String[4]; args[0] = "-i"; args[1] =
+		 * "E:\\GSoC\\resources\\Ictalurus.json"; args[2] = "-o"; args[3] =
+		 * "test_main_output.xml";
+		 */
 
 		if (args.length < 4 || args.length > 8 || args.length % 2 == 1) {
 			OntophenotypeLogger.warning("Incorrect number of parameters !");
@@ -25,11 +33,6 @@ public class Main {
 		} else {
 			resolveEightArguments(args);
 		}
-
-		// ExecutionController.run(
-		// "E:\\GSoC\\resources\\Complete Taxon Annotations.json",
-		// "test_main_output.xml", "E:\\GSoC\\resources\\tao.owl", true,
-		// true);
 
 	}
 

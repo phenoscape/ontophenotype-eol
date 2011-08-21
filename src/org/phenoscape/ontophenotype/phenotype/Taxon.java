@@ -4,6 +4,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class Taxon {
 
 	private String id;

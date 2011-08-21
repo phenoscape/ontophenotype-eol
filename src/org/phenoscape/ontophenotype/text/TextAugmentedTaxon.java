@@ -2,6 +2,12 @@ package org.phenoscape.ontophenotype.text;
 
 import org.phenoscape.ontophenotype.util.TextConstants;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class TextAugmentedTaxon {
 
 	private String name;
@@ -45,6 +51,12 @@ public class TextAugmentedTaxon {
 		dcIdentifier = name.toLowerCase().replaceAll(" ", "_");
 	}
 
+	/**
+	 * Builds the link structure for this taxon's page at
+	 * http://kb.phenoscape.org/ .
+	 * 
+	 * @return the link to this taxon's page at http://kb.phenoscape.org/
+	 */
 	public String getSourceURL() {
 		if (this.ttoID != null && !this.ttoID.equals("")) {
 			String sourceURL = TextConstants.PHENOSCAPE_TAXON_BASE_URL

@@ -1,5 +1,11 @@
 package org.phenoscape.ontophenotype.phenotype;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class TaxonRank {
 	
 	private String id;
@@ -19,6 +25,4 @@ public class TaxonRank {
 		this.name = name;
 	}
 	
-	
-
 }

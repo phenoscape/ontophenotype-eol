@@ -2,6 +2,12 @@ package org.phenoscape.ontophenotype.input;
 
 import org.phenoscape.ontophenotype.phenotype.AnnotationCollection;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public interface IPhenotypeDataReader {
 
 	/**

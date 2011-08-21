@@ -1,5 +1,11 @@
 package org.phenoscape.ontophenotype.util;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class TextConstants {
 
 	public static final String PHENOSCAPE_ENTITY_BASE_URL = "http://kb.phenoscape.org/term/entity/";

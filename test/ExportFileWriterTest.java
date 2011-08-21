@@ -12,8 +12,20 @@ import org.phenoscape.ontophenotype.phenotype.Taxon;
 import org.phenoscape.ontophenotype.text.PatternFileReader;
 import org.xml.sax.SAXException;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class ExportFileWriterTest {
 
+	/**
+	 * This test requires an internet connection.
+	 * @throws ParserConfigurationException
+	 * @throws SAXException
+	 * @throws IOException
+	 */
 	@Test
 	public void testTaxaCollectionExportFileWriter()
 			throws ParserConfigurationException, SAXException, IOException {

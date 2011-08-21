@@ -16,6 +16,12 @@ import org.phenoscape.ontophenotype.text.PatternFileReader;
 import org.phenoscape.ontophenotype.text.TextAugmentedTaxon;
 import org.xml.sax.SAXException;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class BasicTextGeneratorTest {
 
 	@Test
@@ -23,13 +29,13 @@ public class BasicTextGeneratorTest {
 		JSONReader jsonReader = new JSONReader();
 
 		AnnotationCollection annotationCollection = jsonReader
-				.readFile("test\\test resources\\Ictalurus_punctatus.json");
+				.readFile("test/test resources/Ictalurus_punctatus.json");
 		List<Taxon> annotatedTaxa = annotationCollection.getAnnotatedTaxa();
 
 		BasicTextGenerator textGenerator = new BasicTextGenerator();
 
 		Map<String, List<String>> qualityToPatternMap = PatternFileReader
-				.parsePatternFile("test\\test resources\\text_patterns_test.xml");
+				.parsePatternFile("/test resources/text_patterns_test.xml");
 
 		TextAugmentedTaxon textAugmentedTaxon = textGenerator
 				.buildText(annotatedTaxa.get(0), qualityToPatternMap, true);

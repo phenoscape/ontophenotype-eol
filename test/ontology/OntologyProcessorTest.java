@@ -9,11 +9,18 @@ import org.phenoscape.ontophenotype.ontology.AnatomyOntologyProcessor;
 import org.phenoscape.ontophenotype.util.TextConstants;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class OntologyProcessorTest {
 
 	/**
 	 * Tests the reasoner for finding all the component classes of an owl class.
 	 * For this test case, it is used the "head" class.
+	 * This test requires an internet connection.
 	 * 
 	 * @throws OWLOntologyCreationException
 	 */

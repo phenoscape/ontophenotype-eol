@@ -3,10 +3,16 @@ package org.phenoscape.ontophenotype.util;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class OntophenotypeLogger {
 	
 	  /**
-     * Logs information
+     * Logs information.
      *    
      * @param message
      */

@@ -7,6 +7,12 @@ import java.util.HashSet;
 import org.phenoscape.ontophenotype.phenotype.Annotation;
 import org.phenoscape.ontophenotype.phenotype.Taxon;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class TaxaComparer {
 
 	/**

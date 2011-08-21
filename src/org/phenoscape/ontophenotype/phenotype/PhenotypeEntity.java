@@ -2,6 +2,12 @@ package org.phenoscape.ontophenotype.phenotype;
 
 import org.phenoscape.ontophenotype.util.TextConstants;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class PhenotypeEntity {
 
 	private String id;
@@ -23,10 +29,17 @@ public class PhenotypeEntity {
 		return id;
 	}
 
+	/**
+	 * Builds the link structure for this entity's page at
+	 * http://kb.phenoscape.org/ .
+	 * 
+	 * @return the link to this entity's page at http://kb.phenoscape.org/
+	 */
 	public String getLinkedName() {
-		if (name != null && !name.equals("")) {		
+		if (name != null && !name.equals("")) {
 			String linkedName = "<a href=\"";
-			linkedName += TextConstants.PHENOSCAPE_ENTITY_BASE_URL + this.id + "\">";
+			linkedName += TextConstants.PHENOSCAPE_ENTITY_BASE_URL + this.id
+					+ "\">";
 			linkedName += this.name;
 			linkedName += "</a>";
 			return linkedName;

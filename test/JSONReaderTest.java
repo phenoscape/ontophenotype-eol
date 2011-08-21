@@ -4,6 +4,12 @@ import org.junit.Test;
 import org.phenoscape.ontophenotype.input.JSONReader;
 import org.phenoscape.ontophenotype.phenotype.AnnotationCollection;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class JSONReaderTest {
 
 	/**
@@ -15,7 +21,7 @@ public class JSONReaderTest {
 		JSONReader jsonReader = new JSONReader();
 
 		AnnotationCollection annotationCollection = jsonReader
-				.readFile("test\\test resources\\Ictalurus_punctatus.json");
+				.readFile("test/test resources/Ictalurus_punctatus.json");
 
 		assertEquals(700, annotationCollection.getTotal());
 

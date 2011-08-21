@@ -20,8 +20,34 @@ import org.phenoscape.ontophenotype.util.OntophenotypeLogger;
 import org.phenoscape.ontophenotype.util.TextConstants;
 import org.xml.sax.SAXException;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class ExecutionController {
 
+	/**
+	 * Providing a JSON file for input, depending on its size, an appropriate
+	 * method is called to generate an export file.
+	 * 
+	 * @param inputFilePath
+	 *            the path of the JSON file provided as input
+	 * @param exportFilePath
+	 *            the path for the export file that will be written
+	 * @param ontologyFilePath
+	 *            the location of the Teleost ontology owl file. If null, the
+	 *            file will be retrieved using the purl link ; if a non null
+	 *            String, then the ontologyLocation parameter should be the
+	 *            local path of the .owl file
+	 * @param useLinks
+	 *            boolean value indicating whether links to anatomy terms
+	 *            definitions should be used in the export file
+	 * @param groupEntities
+	 *            boolean value indicating whether anatomy terms should be
+	 *            grouped in anatomical systems in the export file
+	 */
 	public static void run(String inputFilePath, String exportFilePath,
 			String ontologyFilePath, boolean useLinks, boolean groupEntities) {
 
@@ -36,6 +62,25 @@ public class ExecutionController {
 
 	}
 
+	/**
+	 * Generates an export file from a small JSON input file.
+	 * 
+	 * @param inputFilePath
+	 *            the path of the JSON file provided as input
+	 * @param exportFilePath
+	 *            the path for the export file that will be written
+	 * @param ontologyFilePath
+	 *            the location of the Teleost ontology owl file. If null, the
+	 *            file will be retrieved using the purl link ; if a non null
+	 *            String, then the ontologyLocation parameter should be the
+	 *            local path of the .owl file
+	 * @param useLinks
+	 *            boolean value indicating whether links to anatomy terms
+	 *            definitions should be used in the export file
+	 * @param groupEntities
+	 *            boolean value indicating whether anatomy terms should be
+	 *            grouped in anatomical systems in the export file
+	 */
 	private static void smallFileRun(String inputFilePath,
 			String exportFilePath, String ontologyFilePath, boolean useLinks,
 			boolean groupEntities) {
@@ -51,8 +96,8 @@ public class ExecutionController {
 
 		List<Taxon> annotatedTaxa = annotationCollection.getAnnotatedTaxa();
 
-		try {							
-						
+		try {
+
 			Map<String, List<String>> qualityToPatternMap = PatternFileReader
 					.parsePatternFile("/text_patterns.xml");
 
@@ -75,6 +120,25 @@ public class ExecutionController {
 
 	}
 
+	/**
+	 * Generates an export file from a large JSON input file.
+	 * 
+	 * @param inputFilePath
+	 *            the path of the JSON file provided as input
+	 * @param exportFilePath
+	 *            the path for the export file that will be written
+	 * @param ontologyFilePath
+	 *            the location of the Teleost ontology owl file. If null, the
+	 *            file will be retrieved using the purl link ; if a non null
+	 *            String, then the ontologyLocation parameter should be the
+	 *            local path of the .owl file
+	 * @param useLinks
+	 *            boolean value indicating whether links to anatomy terms
+	 *            definitions should be used in the export file
+	 * @param groupEntities
+	 *            boolean value indicating whether anatomy terms should be
+	 *            grouped in anatomical systems in the export file
+	 */
 	private static void largeFileRun(String inputFilePath,
 			String exportFilePath, String ontologyFilePath, boolean useLinks,
 			boolean groupEntities) {
@@ -104,9 +168,6 @@ public class ExecutionController {
 								+ annotationCollections
 										.indexOf(annotationCollection)
 								+ " ... \n");
-
-				//System.out.println(annotationCollections
-						//.indexOf(annotationCollection));
 
 				for (Annotation annotation : annotationCollection
 						.getAnnotations()) {

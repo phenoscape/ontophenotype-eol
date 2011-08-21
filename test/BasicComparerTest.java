@@ -9,6 +9,12 @@ import org.phenoscape.ontophenotype.phenotype.Annotation;
 import org.phenoscape.ontophenotype.phenotype.AnnotationCollection;
 import org.phenoscape.ontophenotype.phenotype.Taxon;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class BasicComparerTest {
 
 	@Test
@@ -16,7 +22,7 @@ public class BasicComparerTest {
 		JSONReader jsonReader = new JSONReader();
 
 		AnnotationCollection annotationCollection = jsonReader
-				.readFile("test\\test resources\\Ictalurus.json");
+				.readFile("test/test resources/Ictalurus.json");
 		List<Taxon> annotatedTaxa = annotationCollection.getAnnotatedTaxa();
 
 		List<Annotation> commonAnnotations = TaxaComparer

@@ -10,11 +10,18 @@ import org.phenoscape.ontophenotype.phenotype.Taxon;
 import org.phenoscape.ontophenotype.util.TextConstants;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class AnatomicalSystemBinderTest {
 
 	/**
 	 * Complete test for the AnatomicalSystemBinder class that groups anatomical
 	 * entities in anatomical systems using the Teleost ontology.
+	 * This test requires an internet connection.
 	 * 
 	 * @throws OWLOntologyCreationException
 	 */
@@ -29,7 +36,7 @@ public class AnatomicalSystemBinderTest {
 		JSONReader jsonReader = new JSONReader();
 
 		AnnotationCollection annotationCollection = jsonReader
-				.readFile("test\\resources\\Ictalurus_punctatus.json");
+				.readFile("test/resources/Ictalurus_punctatus.json");
 		List<Taxon> annotatedTaxa = annotationCollection.getAnnotatedTaxa();
 
 		binder.getAnnotationsByAnatomicalSystem(annotatedTaxa.get(0));

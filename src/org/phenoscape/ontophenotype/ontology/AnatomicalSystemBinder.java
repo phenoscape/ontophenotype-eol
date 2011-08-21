@@ -15,8 +15,15 @@ import org.phenoscape.ontophenotype.util.AnatomicalSystem;
 import org.phenoscape.ontophenotype.util.OntophenotypeLogger;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class AnatomicalSystemBinder {
-	
+
+	/** instance of the AnatomicalSystemBinder singleton class */
 	private static AnatomicalSystemBinder anatomicalSystemBinder;
 
 	private AnatomyOntologyProcessor ontologyProcessor;
@@ -39,22 +46,30 @@ public class AnatomicalSystemBinder {
 			e.printStackTrace();
 		}
 	}
-	
-	public static AnatomicalSystemBinder getAnatomicalSystemBinder(String ontologyURL) {
+
+	public static AnatomicalSystemBinder getAnatomicalSystemBinder(
+			String ontologyURL) {
 		if (anatomicalSystemBinder == null) {
 			anatomicalSystemBinder = new AnatomicalSystemBinder(ontologyURL);
 		}
 		return anatomicalSystemBinder;
 	}
-	
-	public static AnatomicalSystemBinder getAnatomicalSystemBinder(File ontologyFile) {
+
+	public static AnatomicalSystemBinder getAnatomicalSystemBinder(
+			File ontologyFile) {
 		if (anatomicalSystemBinder == null) {
 			anatomicalSystemBinder = new AnatomicalSystemBinder(ontologyFile);
 		}
 		return anatomicalSystemBinder;
 	}
 
-
+	/**
+	 * Groups the annotations of a taxon in anatomical systems. An annotation is
+	 * classified based on its primary anatomical entity.
+	 * 
+	 * @param taxon
+	 * @return a mapping between an anatomical system and a list of annotations
+	 */
 	public Map<AnatomicalSystem, List<Annotation>> getAnnotationsByAnatomicalSystem(
 			Taxon taxon) {
 
@@ -77,22 +92,25 @@ public class AnatomicalSystemBinder {
 						.getEntityIdAnnotationMap().get(intersectionIRI);
 				intersectionAnnotations.add(intersectionAnnotation);
 			}
-			
-			annotationsByAnatomicalSystemMap.put(anatomicalSystem, intersectionAnnotations);
-	        
-			//System.out.println(anatomicalSystem.name() + " : " + intersectionAnnotations.size());
-	        
-			
+
+			annotationsByAnatomicalSystemMap.put(anatomicalSystem,
+					intersectionAnnotations);
+
 		}
 
 		return annotationsByAnatomicalSystemMap;
 	}
 
+	/**
+	 * Groups the anatomical entities represented by owl classes from the
+	 * Teleost ontology in anatomical systems. Method is used in class
+	 * constructor. The AnatomicalSystemBinder is a Singleton class and this
+	 * method is called only once in a normal application run cycle.
+	 * 
+	 * @throws OWLOntologyCreationException
+	 */
 	private void fillClassesIRIsMap() throws OWLOntologyCreationException {
 		for (AnatomicalSystem anatomicalSystem : AnatomicalSystem.values()) {
-
-			//System.out.println(anatomicalSystem.name() + " "
-			//		+ anatomicalSystem.iri());
 
 			Set<String> subClassesIRIs = ontologyProcessor
 					.findComponentClasses(anatomicalSystem.iri());
@@ -101,12 +119,20 @@ public class AnatomicalSystemBinder {
 
 			classesIRIsByAnatomicalSystem.put(anatomicalSystem,
 					subClassesTAOIds);
-			
-			OntophenotypeLogger.info("Retrieving components of the " + anatomicalSystem.name() + " ... \n");
+
+			OntophenotypeLogger.info("Retrieving components of the "
+					+ anatomicalSystem.name() + " ... \n");
 		}
 
 	}
 
+	/**
+	 * Extracts the TAO id from the owl class IRI and converts it to the its
+	 * Phenoscape representation.
+	 * 
+	 * @param subClassesIRIs
+	 * @return
+	 */
 	private Set<String> convertToTAOId(Set<String> subClassesIRIs) {
 
 		Set<String> subClassesTAOIds = new HashSet<String>();
@@ -118,8 +144,6 @@ public class AnatomicalSystemBinder {
 			String[] iriComponents = iri.split("/");
 			String taoID = iriComponents[iriComponents.length - 1].replace("_",
 					":");
-
-			//System.out.println("TAO " + taoID);
 
 			subClassesTAOIds.add(taoID);
 		}

@@ -5,6 +5,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class AnnotationCollection {
 
 	private int total;
@@ -27,7 +33,7 @@ public class AnnotationCollection {
 	}
 
 	/**
-	 * Groups all the annotations by taxon
+	 * Groups all the annotations by taxon.
 	 * 
 	 * @return annotated taxa
 	 */

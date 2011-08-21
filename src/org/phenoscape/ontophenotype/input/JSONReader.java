@@ -13,6 +13,12 @@ import org.phenoscape.ontophenotype.util.OntophenotypeLogger;
 
 import com.google.gson.Gson;
 
+/**
+ * 
+ * @author Alex Ginsca
+ * @version 1.0
+ * @since 2011
+ */
 public class JSONReader implements IPhenotypeDataReader {
 
 	protected Gson gson;
